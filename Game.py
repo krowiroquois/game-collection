@@ -6,9 +6,10 @@ class Game:
     
     def set_price(self, amount):
         if amount < 0:
-            print("Error: The price cannot be below zero!")
+            print(f"Error: The price for {self.name} cannot be below zero!")
         else:
             self.price = amount
+            print(f"{self.name} {self.year} {self.price}")
 
 game1 = Game("Sonic the Hedgehog", 2006, 15)
 game2 = Game("Bayonetta", 2010, 25)
