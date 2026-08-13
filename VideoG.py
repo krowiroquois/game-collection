@@ -11,8 +11,8 @@ class Game:
             self.price = amount
             print(f"{self.name} {self.year} {self.price}")
 
-game1 = Game("Sonic the Hedgehog", 2006, 15)
-game2 = Game("Bayonetta", 2010, 25)
-
-game1.set_price(-5)
-game2.set_price(35)
+if __name__ == "__main__":
+    game1 = Game("Sonic the Hedgehog", 2006, 15)
+    game2 = Game("Bayonetta", 2010, 25)
+    game1.set_price(-5)
+    game2.set_price(35)
