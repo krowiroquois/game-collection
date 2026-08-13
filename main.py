@@ -19,8 +19,8 @@ def main():
     collection.add_game(game4)
 
     while True:
-         print("\nGame Collection Menu")
-         print("1. Show games")
+         print("\nMenu")
+         print("1. Show all games")
          print("2. Add a game")
          print("Type 'quit' to exit")
          
@@ -28,24 +28,38 @@ def main():
          try:
             choice = input("Choose an option: ")
             if choice == "1":
-                collection.show_games()
+                collection.show_games() # displays entire list of games
             
             elif choice == "2":
-                name = input("Enter the game name: ")
+                name = input("Enter the game name: ") # asks user to input game name
 
                 while True:
                     try:
                         year = int(input("Enter the release year: "))
+                        # asks user to input release year of the game
 
                         if year < 1972:
                             print("The very first video game was released in 1972, so that")
-                            print("answer is impossible. Please enter a valid year.")
+                            print("answer is impossible. Let's try that again!")
                             continue
-                            
-                        break
+                        # if the user were to input a year less than 1972, this message would
+                        # pop up, then send the user back to the beginning of the "year"
+                        # input prompt
+                        
+                        if year > 2026:
+                            print("How in the hell did you get a game from the future?")
+                            print("You some type of time traveler?")
+                            continue
+                        # same thing for the previous if statement, except it doesn't allow
+                        # the user to time travel & own games that haven't yet been released
+
+                        break 
+                        # ends the loop so that it doesn't repeat in case
+                        # there may be an error
                     
                     except ValueError:
                         print("Please enter a valid number for the year.")
+                    # prints an error if the user inputs string instead of an integer
                 
                 while True:
                     try:
@@ -82,13 +96,21 @@ def main():
                         print("Invalid game type.")
                         continue
 
+            elif choice == "3":
+                pass
+
+            elif choice == "4":
+                pass
             
-            elif choice.lower() == "quit":
-                print("See you around, superstar!")
-                break
+
+            elif choice.lower() == "quit": # if the user types "quit",
+                print("See you around, superstar!") # prints a nice goodbye statement!
+                break # ends the entire loop and exits the menu
             
-            else:
+            else: 
                 print("Please choose from the available menu options.")
+                # if the user types anything but the available menu options, this will print
+                # to encourage them to input something that works.
 
 
          except Exception as e:
