@@ -10,6 +10,9 @@ class Game:
         else:
             self.price = amount
             print(f"{self.name} {self.year} {self.price}")
+    
+    def display_info(self):
+        print(f"{self.name} ({self.year}) - ${self.price}")
 
 if __name__ == "__main__":
     game1 = Game("Sonic the Hedgehog", 2006, 15)
