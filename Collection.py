@@ -9,5 +9,6 @@ class Collection:
         if not self.games:
             print("The game collection is empty.")
         else:
-            for game in self.games:
+            for number, game in enumerate(self.games, start=1):
+                print(f"{number}. ", end="")
                 game.display_info()
