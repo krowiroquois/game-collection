@@ -1,4 +1,4 @@
-class Game:
+class Game: # blueprint class for kind 1 and 2 of the code
     def __init__(self, name, year, price):
         self.name = name
         self.year = year

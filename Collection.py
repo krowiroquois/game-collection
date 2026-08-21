@@ -1,3 +1,7 @@
+import json
+from Physical import Physical
+from Digital import Digital
+
 class Collection:
     def __init__(self):
         self.games = []
@@ -42,3 +46,57 @@ class Collection:
         # statement notifies user of total value of collection
         # ":.2f" makes it so that there are two decimal points attached
         # to the overall total.
+    
+    def save_games(self):
+        data = []
+
+        for game in self.games:
+
+            if isinstance(game, Physical):
+                data.append({
+                    "type": "Physical",
+                    "name": game.name,
+                    "year": game.year,
+                    "price": game.price,
+                    "console": game.console
+                })
+            
+            elif isinstance(game, Digital):
+                data.append({
+                    "type": "Digital",
+                    "name": game.name,
+                    "year": game.year,
+                    "price": game.price,
+                    "source": game.source
+                })
+        
+        with open("games.json", "w") as file:
+            json.dump(data, file, indent=4)
+    
+    def load_games(self):
+        try:
+            with open("games.json", "r") as file:
+                data = json.load(file)
+
+            for game in data:
+
+                if game["type"].lower() == "physical":
+                    new_game = Physical(
+                        game["name"],
+                        game["year"],
+                        game["price"],
+                        game["console"]
+                    )
+
+                elif game["type"].lower() == "digital":
+                    new_game = Digital(
+                        game["name"],
+                        game["year"],
+                        game["price"],
+                        game["source"]
+                    )
+
+                self.games.append(new_game)
+        
+        except FileNotFoundError:
+            pass

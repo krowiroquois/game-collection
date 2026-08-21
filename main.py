@@ -11,18 +11,7 @@ def main(): # defines the function main() - overall code of the app
     # you will see these throughout the code
 
     collection = Collection() # calls the Collection class
-
-    game1 = Physical("Metal Gear Solid", 1999, 100, "PS1")
-    game2 = Physical("Sonic the Hedgehog", 2006, 15, "XBOX 360")
-    game3 = Digital("Boyfriend to Death", 2016, 0, "BTD Website")
-    game4 = Digital("Governor of Poker", 2016, 0, "Steam")
-    # current list of games
-
-    collection.add_game(game1)
-    collection.add_game(game2)
-    collection.add_game(game3)
-    collection.add_game(game4)
-    # method adds the games to the collection
+    collection.load_games() # loads all previous data
 
     while True: # runs the condition until it breaks
          print(" ")
@@ -202,6 +191,8 @@ def main(): # defines the function main() - overall code of the app
             
 
             elif choice.lower() == "quit": # if the user types "quit",
+                collection.save_games() # saves the data of the collection
+                print("\nAll progress saved!")
                 print("\nSee you around, superstar! ☆⸜(｡˃ ᵕ ˂ )⸝☆")
                 print(" ")
                 # prints a nice goodbye statement!

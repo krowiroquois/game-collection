@@ -1,0 +1,44 @@
+[
+    {
+        "type": "Physical",
+        "name": "Metal Gear Solid",
+        "year": 1999,
+        "price": 100,
+        "console": "PS1"
+    },
+    {
+        "type": "Physical",
+        "name": "Sonic the Hedgehog",
+        "year": 2006,
+        "price": 15,
+        "console": "XBOX 360"
+    },
+    {
+        "type": "Physical",
+        "name": "Saints Row Double Pack",
+        "year": 2010,
+        "price": 25,
+        "console": "XBOX 360"
+    },
+    {
+        "type": "Digital",
+        "name": "Minecraft",
+        "year": 2011,
+        "price": 20,
+        "source": "Steam"
+    },
+    {
+        "type": "Digital",
+        "name": "ROBLOX",
+        "year": 2006,
+        "price": 0,
+        "source": "ROBLOX"
+    },
+    {
+        "type": "Digital",
+        "name": "Fun Run 3",
+        "year": 2016,
+        "price": 0,
+        "source": "iOS App Store"
+    }
+]
