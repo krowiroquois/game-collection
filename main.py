@@ -140,7 +140,7 @@ def main(): # defines the function main() - overall code of the app
                     # allowing the loop to function
 
                     for game in collection.games: # for all the games in the collection,
-                        if search_game.lower() in game.name.lower(): # if the term serched corresponds with a game,
+                        if search_game.lower() == game.name.lower(): # if the term serched corresponds with a game,
                             print("\nFound it!") # prints statement saying the game was found
                             game.display_info() # displays game info
                             print("\nReturning to main menu...") # notifies user of returning to main menu

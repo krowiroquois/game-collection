@@ -1,6 +1,6 @@
-from VideoG import Game
+from VideoG import Game # imports Game class from VideoG.py
 
-class Physical(Game):
+class Physical(Game): # defines the Physical class for physical games
     def __init__(self, name, year, price, console):
         super().__init__(name, year, price)
         self.console = console

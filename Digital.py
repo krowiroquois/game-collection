@@ -1,6 +1,6 @@
-from VideoG import Game
+from VideoG import Game # imports Game class from VideoG.py
 
-class Digital(Game):
+class Digital(Game): # defines the Digital class for digital games
     def __init__(self, name, year, price, source):
         super().__init__(name, year, price)
         self.source = source

@@ -1,8 +1,8 @@
-import json
-from Physical import Physical
-from Digital import Digital
+import json # imports json
+from Physical import Physical # imports Physical class from Physical.py
+from Digital import Digital # imports Digital class from Digital.py
 
-class Collection:
+class Collection: # defines the Collection class
     def __init__(self):
         self.games = []
         # empty list for the games
@@ -47,28 +47,28 @@ class Collection:
         # ":.2f" makes it so that there are two decimal points attached
         # to the overall total.
     
-    def save_games(self):
+    def save_games(self): # defines the save_game method
         data = []
-
+        # empty list for the data
         for game in self.games:
 
-            if isinstance(game, Physical):
+            if isinstance(game, Physical): # if the game is Physical,
                 data.append({
                     "type": "Physical",
                     "name": game.name,
                     "year": game.year,
                     "price": game.price,
                     "console": game.console
-                })
+                }) # adds all attributes corresponding to the game
             
-            elif isinstance(game, Digital):
+            elif isinstance(game, Digital): # if the game is Digital,
                 data.append({
                     "type": "Digital",
                     "name": game.name,
                     "year": game.year,
                     "price": game.price,
                     "source": game.source
-                })
+                }) # adds all attributes corresponding to the game
         
         with open("games.json", "w") as file:
             json.dump(data, file, indent=4)
@@ -100,3 +100,4 @@ class Collection:
         
         except FileNotFoundError:
             pass
+            # if the file isn't found, code runs as usual
